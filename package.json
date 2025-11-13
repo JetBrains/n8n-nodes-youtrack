@@ -1,0 +1,56 @@
+{
+	"name": "n8n-nodes-youtrack",
+	"version": "0.1.0",
+	"description": "Custom n8n node for YouTrack",
+	"license": "MIT",
+	"homepage": "",
+	"keywords": [
+		"n8n-community-node-package"
+	],
+	"author": {
+		"name": "Elias Meire",
+		"email": "elias@meire.dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/youtrack/n8n-nodes-youtrack.git"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/YouTrackApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/YouTrack/YouTrack.node.js",
+			"dist/nodes/YouTrack/YouTrackTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "0.10.0",
+		"change-case": "4.1.2",
+		"eslint": "9.32.0",
+		"prettier": "3.6.2",
+		"release-it": "^19.0.4",
+		"typescript": "5.9.2"
+	},
+	"overrides": {
+		"change-case": "4.1.2",
+		"@n8n/eslint-plugin-community-nodes": "0.2.0"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}

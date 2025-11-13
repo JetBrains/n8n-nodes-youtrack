@@ -1,0 +1,21 @@
+{
+  "node": "n8n-nodes-youtrack.YouTrackTrigger",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": [
+    "Miscellaneous"
+  ],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://www.jetbrains.com/help/youtrack/server/Workflow-Tutorial.html"
+      }
+    ]
+  }
+}
+
