@@ -75,6 +75,44 @@ The YouTrack node supports the following resources and operations:
 ### Work Item
 - **Add** - Add a work item (time tracking) to an issue
 
+## YouTrack Trigger (Webhook)
+
+The YouTrack Trigger node allows you to start workflows automatically when events occur in YouTrack (e.g., issue created, updated, deleted).
+
+### Supported Events
+
+- Issue Created
+- Issue Updated  
+- Issue Deleted
+- Comment Added
+- Comment Updated
+- Comment Deleted
+- Work Item Added
+- Work Item Updated
+- Work Item Deleted
+- Issue Attachment Added
+- Issue Attachment Deleted
+
+### Webhook Security
+
+**Important**: Without authentication, anyone with your webhook URL can trigger your workflows. The YouTrack Trigger supports secure webhook authentication to prevent unauthorized access.
+
+#### Authentication Methods
+
+1. **Header Authentication** (Recommended)
+   - Token sent in a custom HTTP header
+   - More secure - tokens not visible in URL logs
+   - Industry standard for API authentication
+
+
+#### Setup Guide
+
+**Quick Start:**
+
+1. Generate a secure token: `openssl rand -hex 32`
+2. In n8n, add **YouTrack Webhook Auth API** credential to your trigger node
+3. Configure your YouTrack app to send the token with webhook requests
+
 ## Credentials
 
 To use the YouTrack node, you need to authenticate with your YouTrack instance using a permanent token.

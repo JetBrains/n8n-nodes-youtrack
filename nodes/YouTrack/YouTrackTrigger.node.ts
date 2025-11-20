@@ -88,6 +88,10 @@ export class YouTrackTrigger implements INodeType {
 				name: 'youTrackApi',
 				required: true,
 			},
+			{
+				name: 'youTrackWebhookApi',
+				required: false,
+			},
 		],
 		webhooks: [
 			{
@@ -141,6 +145,45 @@ export class YouTrackTrigger implements INodeType {
 	async webhook(this: IWebhookFunctions): Promise<IWebhookResponseData> {
 		const req = this.getRequestObject();
 		const selectedEvents = this.getNodeParameter('events', []) as string[];
+
+		// Validate authentication if webhook credential is configured
+		try {
+			const webhookCredentials = await this.getCredentials('youTrackWebhookApi');
+			
+			if (webhookCredentials) {
+				const authMethod = webhookCredentials.authMethod as string;
+				const expectedToken = webhookCredentials.authToken as string;
+				
+				let receivedToken: string | undefined;
+				
+				if (authMethod === 'headerAuth') {
+					// Header-based authentication
+					const headerName = webhookCredentials.headerName as string;
+					receivedToken = req.headers[headerName.toLowerCase()] as string;
+				} else if (authMethod === 'queryAuth') {
+					// Query parameter authentication
+					const queryParamName = webhookCredentials.queryParameterName as string;
+					receivedToken = req.query?.[queryParamName] as string;
+				}
+				
+				// Validate the token
+				if (!receivedToken || receivedToken !== expectedToken) {
+					return {
+						webhookResponse: {
+							message: 'Unauthorized: Invalid or missing authentication token',
+							statusCode: 401,
+						},
+					};
+				}
+			}
+		} catch (error) {
+			return {
+				webhookResponse: {
+					message: `Error validating authentication: ${error}`,
+					statusCode: 401,
+				},
+			};
+		}
 
 		// Parse the webhook payload safely
 		let body: IDataObject = {};
