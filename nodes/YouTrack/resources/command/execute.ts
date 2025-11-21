@@ -1,17 +1,10 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-// Type definitions for command execute request body
-interface CommandLimitedVisibility {
-	$type: 'CommandLimitedVisibility';
-	permittedGroups?: Array<{ id: string }>;
-	permittedUsers?: Array<{ id: string }>;
-}
 
 interface CommandExecuteRequestBody {
 	query: string;
 	comment?: string;
 	silent?: boolean;
-	visibility?: CommandLimitedVisibility;
 }
 
 export const commandExecuteDescription: INodeProperties[] = [
@@ -30,7 +23,7 @@ export const commandExecuteDescription: INodeProperties[] = [
 		default: '',
 		placeholder: 'tag MyTag for me',
 		description:
-			'YouTrack command string. Examples: "tag MyTag", "for me", "tag To deploy for jane.doe", "vote+1", "star username", "work 2h Fixed bug". Note: "vote+1" cannot be used on your own issues. Any unrecognized words will be treated as tag names. For assignee commands, use "for me" (current user) or "for username" (must be a valid YouTrack username - if you get "Assignee expected" error, verify the username exists).',
+			'YouTrack command string. Examples: "tag MyTag", "for me", "tag To deploy for jane.doe", "vote+1", "star username", "work 2h Fixed bug", "visible to Developers", "add visible to john.doe". Note: "vote+1" cannot be used on your own issues. Any unrecognized words will be treated as tag names. For assignee commands, use "for me" (current user) or "for username" (must be a valid YouTrack username - if you get "Assignee expected" error, verify the username exists).',
 		routing: {
 			send: {
 				type: 'body',
@@ -104,9 +97,9 @@ export const commandExecuteDescription: INodeProperties[] = [
 				displayName: 'Fields to Return',
 				name: 'fields',
 				type: 'string',
-				default: 'issues(id,idReadable),query',
+				default: 'issues(id,idReadable),query,visibility(permittedGroups(id,name),permittedUsers(id,login))',
 				description:
-					'Comma-separated list of fields to return in response. Common: issues(ID,idReadable),query,visibility(permittedGroups(ID,name),permittedUsers(ID,login)).',
+					'Comma-separated list of fields to return in response. Example: issues(id,idReadable,summary),query',
 				routing: {
 					send: {
 						type: 'query',
@@ -127,101 +120,7 @@ export const commandExecuteDescription: INodeProperties[] = [
 						property: 'silent',
 					},
 				},
-			},
-			{
-				displayName: 'Visibility - Permitted Groups',
-				name: 'permittedGroups',
-				type: 'string',
-				default: '',
-				placeholder: '3-2, 3-5',
-				description:
-					'Optional: Comma-separated list of group database IDs (e.g., 3-2, 3-5) for restricted visibility. Can be used together with Permitted Users. Leave empty for unlimited visibility.',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'visibility.permittedGroups',
-						preSend: [
-							async function (this, requestOptions) {
-								const permittedGroups = this.getNodeParameter(
-									'additionalOptions.permittedGroups',
-								) as string;
-
-								if (!permittedGroups || permittedGroups.trim() === '') {
-									return requestOptions;
-								}
-
-								// Split by comma and trim, convert to array of group objects
-								const groupIds = permittedGroups
-									.split(',')
-									.map((id) => id.trim())
-									.filter((id) => id.length > 0 && /^\d+-\d+$/.test(id))
-									.map((id) => ({ id }));
-
-								if (groupIds.length === 0) {
-									return requestOptions;
-								}
-
-								if (requestOptions.body && typeof requestOptions.body === 'object') {
-									const body = requestOptions.body as CommandExecuteRequestBody;
-									if (!body.visibility) {
-										body.visibility = { $type: 'CommandLimitedVisibility' };
-									}
-									body.visibility.permittedGroups = groupIds;
-								}
-
-								return requestOptions;
-							},
-						],
-					},
-				},
-			},
-			{
-				displayName: 'Visibility - Permitted Users',
-				name: 'permittedUsers',
-				type: 'string',
-				default: '',
-				placeholder: '2-10, 2-15',
-				description:
-					'Optional: Comma-separated list of user database IDs (e.g., 2-10, 2-15) for restricted visibility. Can be used together with Permitted Groups. Leave empty for unlimited visibility.',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'visibility.permittedUsers',
-						preSend: [
-							async function (this, requestOptions) {
-								const permittedUsers = this.getNodeParameter(
-									'additionalOptions.permittedUsers',
-								) as string;
-
-								if (!permittedUsers || permittedUsers.trim() === '') {
-									return requestOptions;
-								}
-
-								// Split by comma and trim, convert to array of user objects
-								const userIds = permittedUsers
-									.split(',')
-									.map((id) => id.trim())
-									.filter((id) => id.length > 0 && /^\d+-\d+$/.test(id))
-									.map((id) => ({ id }));
-
-								if (userIds.length === 0) {
-									return requestOptions;
-								}
-
-								if (requestOptions.body && typeof requestOptions.body === 'object') {
-									const body = requestOptions.body as CommandExecuteRequestBody;
-									if (!body.visibility) {
-										body.visibility = { $type: 'CommandLimitedVisibility' };
-									}
-									body.visibility.permittedUsers = userIds;
-								}
-
-								return requestOptions;
-							},
-						],
-					},
-				},
-			},
+			}
 		],
 	},
 ];

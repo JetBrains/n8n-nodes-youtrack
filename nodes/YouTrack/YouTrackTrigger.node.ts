@@ -118,8 +118,7 @@ export class YouTrackTrigger implements INodeType {
 				],
 				description: 'Select one or more events to listen to. Choose "* All Events" to listen to all events.',
 			},
-		],
-		usableAsTool: true,
+		]
 	};
 
 	webhookMethods = {

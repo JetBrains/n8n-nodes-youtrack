@@ -19,7 +19,7 @@ export const projectGetFieldsSchemaDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,field(name,id,fieldType($type)),project(shortName),canBeEmpty,isPublic',
+				default: 'id,field(name,id),project(shortName),canBeEmpty,isPublic',
 				description: 'Comma-separated list of ProjectCustomField attributes to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {
