@@ -1,11 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
-
-
-interface CommandExecuteRequestBody {
-	query: string;
-	comment?: string;
-	silent?: boolean;
-}
+import { NodeOperationError } from 'n8n-workflow';
+import type { CommandExecuteRequestBody } from '../types';
 
 export const commandExecuteDescription: INodeProperties[] = [
 	// Command: Query (required)
@@ -29,17 +24,27 @@ export const commandExecuteDescription: INodeProperties[] = [
 				type: 'body',
 				property: 'query',
 				preSend: [
+					/**
+					 * Normalizes and validates the command query string.
+					 * Trims whitespace and converts multi-line queries to single line.
+					 * 
+					 * Note: Comments should be added via the Comment field
+					 * in Additional Options instead.
+					 * 
+					 * @throws {NodeOperationError} If query is empty
+					 */
 					async function (this, requestOptions) {
 						const query = this.getNodeParameter('query') as string;
 						if (!query) {
-							throw new Error('Command query is required');
+							throw new NodeOperationError(
+								this.getNode(),
+								'Command query is required',
+								{ itemIndex: this.getItemIndex() }
+							);
 						}
 
 						// Trim whitespace and normalize the query string
 						const normalizedQuery = query.trim().replace(/\n+/g, ' ').replace(/\s+/g, ' ');
-
-						// Note: If query contains "comment" as a standalone word, YouTrack will treat it as a tag name.
-						// Comments should be added via the Comment field in Additional Options instead.
 
 						if (requestOptions.body && typeof requestOptions.body === 'object') {
 							(requestOptions.body as CommandExecuteRequestBody).query = normalizedQuery;
@@ -81,6 +86,10 @@ export const commandExecuteDescription: INodeProperties[] = [
 						type: 'body',
 						property: 'comment',
 						preSend: [
+							/**
+							 * Normalizes comment text by trimming whitespace.
+							 * Only processes if a comment value is provided.
+							 */
 							async function (this, requestOptions) {
 								const comment = this.getNodeParameter('additionalOptions.comment') as string;
 								if (comment && requestOptions.body && typeof requestOptions.body === 'object') {

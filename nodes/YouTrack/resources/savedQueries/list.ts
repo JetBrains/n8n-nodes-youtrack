@@ -1,6 +1,20 @@
 import type { INodeProperties } from 'n8n-workflow';
 
 export const savedQueriesListDescription: INodeProperties[] = [
+	// Return All toggle
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		type: 'boolean',
+		displayOptions: {
+			show: {
+				resource: ['savedQueries'],
+				operation: ['list'],
+			},
+		},
+		default: false,
+		description: 'Whether to return all results or only up to a given limit',
+	},
 	// Saved Queries: List - Additional Options
 	{
 		displayName: 'Additional Options',
@@ -32,6 +46,11 @@ export const savedQueriesListDescription: INodeProperties[] = [
 				displayName: 'Limit',
 				name: 'limit',
 				type: 'number',
+				displayOptions: {
+					show: {
+						'/returnAll': [false],
+					},
+				},
 				typeOptions: {
 					minValue: 1,
 				},

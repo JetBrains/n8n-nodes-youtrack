@@ -1,11 +1,5 @@
-import {INodeProperties} from 'n8n-workflow';
-
-// Type definitions for issue draft create request body
-interface IssueDraftCreateRequestBody {
-	project: { id: string };
-	summary?: string;
-	description?: string;
-}
+import {INodeProperties, NodeOperationError} from 'n8n-workflow';
+import type { IssueDraftCreateRequestBody } from '../types';
 
 export const issueDraftCreateDescription: INodeProperties[] = [
 	// Project parameter
@@ -28,6 +22,13 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 				type: 'body',
 				property: 'project',
 				preSend: [
+					/**
+					 * Validates and formats the project ID for issue draft creation.
+					 * Ensures the project ID is in the correct database ID format (e.g., "0-0", "1-2").
+					 * Converts the string ID to the required object format { id: "..." }.
+					 * 
+					 * @throws {NodeOperationError} If project ID format is invalid (must be "number-number")
+					 */
 					async function (this, requestOptions) {
 						const project = this.getNodeParameter('project') as string;
 						if (!project) {
@@ -37,7 +38,11 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 						// Validate that it's a database ID format (number-number)
 						const isDatabaseId = /^\d+-\d+$/.test(project);
 						if (!isDatabaseId) {
-							throw new Error(`Invalid project ID format: "${project}". Please provide a database ID in the format "0-0" (e.g., "0-0", "1-2"). Use the "Get Projects" operation to find the database ID if you only have the short name.`);
+							throw new NodeOperationError(
+								this.getNode(),
+								`Invalid project ID format: "${project}". Please provide a database ID in the format "0-0" (e.g., "0-0", "1-2"). Use the "Get Projects" operation to find the database ID if you only have the short name.`,
+								{ itemIndex: this.getItemIndex() }
+							);
 						}
 
 						if (requestOptions.body && typeof requestOptions.body === 'object') {

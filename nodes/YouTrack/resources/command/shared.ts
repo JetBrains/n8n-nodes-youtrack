@@ -1,9 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
-
-// Type definitions for command shared request body
-interface CommandSharedRequestBody {
-	issues: Array<{ id: string } | { idReadable: string }>;
-}
+import { NodeOperationError } from 'n8n-workflow';
+import type { CommandSharedRequestBody } from '../types';
 
 export const commandSharedDescription: INodeProperties[] = [
 	// Command: Issue IDs parameter
@@ -27,10 +24,22 @@ export const commandSharedDescription: INodeProperties[] = [
 				type: 'body',
 				property: 'issues',
 				preSend: [
+					/**
+					 * Parses and validates comma-separated issue IDs.
+					 * Automatically detects format: database ID (e.g., "2-15") vs readable ID (e.g., "PROJECT-123").
+					 * Database IDs match the pattern "number-number" and are sent as { id: "..." }.
+					 * Readable IDs are sent as { idReadable: "..." }.
+					 * 
+					 * @throws {NodeOperationError} If no issue IDs are provided
+					 */
 					async function (this, requestOptions) {
 						const issueIds = this.getNodeParameter('issueIds') as string;
 						if (!issueIds) {
-							throw new Error('Issue IDs are required');
+							throw new NodeOperationError(
+								this.getNode(),
+								'Issue IDs are required',
+								{ itemIndex: this.getItemIndex() }
+							);
 						}
 
 						// Split by comma and trim

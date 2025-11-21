@@ -1,9 +1,9 @@
-import { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { nodeProperties } from './resources';
+import {INodeType, INodeTypeDescription} from 'n8n-workflow';
+import {nodeProperties} from './resources';
 
 export class YouTrack implements INodeType {
     description: INodeTypeDescription = {
-		// Basic node details
+        // Basic node details
         displayName: 'YouTrack',
         name: 'youtrack',
         icon: 'file:jetbrains-youtrack-icon.svg',
@@ -29,8 +29,8 @@ export class YouTrack implements INodeType {
                 'Content-Type': 'application/json',
             },
         },
-		properties: nodeProperties,
-		usableAsTool: true,
+        properties: nodeProperties,
+        usableAsTool: true,
     };
 }
 
