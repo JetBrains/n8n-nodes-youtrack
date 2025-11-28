@@ -108,7 +108,7 @@ export const commandExecuteDescription: INodeProperties[] = [
 				type: 'string',
 				default: 'issues(id,idReadable),query,visibility(permittedGroups(id,name),permittedUsers(id,login))',
 				description:
-					'Comma-separated list of fields to return in response. Example: issues(id,idReadable,summary),query',
+					'Comma-separated list of fields to return in response. Example: issues(ID,idReadable,summary),query.',
 				routing: {
 					send: {
 						type: 'query',

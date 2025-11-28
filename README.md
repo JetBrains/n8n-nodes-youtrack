@@ -93,25 +93,7 @@ The YouTrack Trigger node allows you to start workflows automatically when event
 - Issue Attachment Added
 - Issue Attachment Deleted
 
-### Webhook Security
-
-**Important**: Without authentication, anyone with your webhook URL can trigger your workflows. The YouTrack Trigger supports secure webhook authentication to prevent unauthorized access.
-
-#### Authentication Methods
-
-1. **Header Authentication** (Recommended)
-   - Token sent in a custom HTTP header
-   - More secure - tokens not visible in URL logs
-   - Industry standard for API authentication
-
-
-#### Setup Guide
-
-**Quick Start:**
-
-1. Generate a secure token: `openssl rand -hex 32`
-2. In n8n, add **YouTrack Webhook Auth API** credential to your trigger node
-3. Configure your YouTrack app to send the token with webhook requests
+---
 
 ## Credentials
 
@@ -119,20 +101,14 @@ To use the YouTrack node, you need to authenticate with your YouTrack instance u
 
 ### Prerequisites
 
-1. Access to a YouTrack instance (cloud or self-hosted)
+1. Access to a YouTrack instance (cloud or server)
 2. A YouTrack account with appropriate permissions
 
 ### Setting Up Authentication
 
-1. **Generate a Permanent Token**:
-   - Log in to your YouTrack instance
-   - Go to your Hub profile (click your avatar in the top right)
-   - Navigate to **Authentication** > **Tokens**
-   - Click **Generate a new token**
-   - Copy the generated token (you won't be able to see it again)
-
+1. **Generate a Permanent Token in YouTrack**
 2. **Configure Credentials in n8n**:
-   - In n8n, go to **Credentials** > **Add Credential**
+   - In n8n, go to **Credentials** > **Create Credential**
    - Select **YouTrack API**
    - Enter your **YouTrack URL** (e.g., `https://your-instance.myjetbrains.com/youtrack` or `http://localhost:8088` for self-hosted)
      - Note: Enter the base URL without `/api` at the end
