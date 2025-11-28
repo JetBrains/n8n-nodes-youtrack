@@ -10,6 +10,7 @@ YouTrack is a project management and issue tracking tool by JetBrains that helps
 [Operations](#operations)  
 [Credentials](#credentials)  
 [Compatibility](#compatibility)  
+[Usage](#usage)  
 [Resources](#resources)  
 
 ## Installation
@@ -122,6 +123,29 @@ The node uses Bearer token authentication and will automatically include the tok
 - **Minimum n8n version**: 1.0.0
 - **Tested with**: n8n 1.0.0 and later
 - **YouTrack API**: Compatible with YouTrack REST API
+
+## Usage
+
+### Command Execute
+
+The **Command Execute** operation allows you to apply YouTrack commands to issues using natural language syntax. Examples:
+- `tag MyTag for me` - Adds "MyTag" to issue and assigns it to you
+- `tag To Deploy for jane.doe` - Adds "To Deploy" tag and assigns to jane.doe
+- `work 2h Fixed bug` - Logs 2 hours of work with a comment
+
+Note: `vote+1` cannot be used on your own issues, and usernames must be valid YouTrack logins.
+
+### Custom Fields
+
+To discover available custom fields for a project, use the **Project > Get Fields Schema** operation, which returns the JSON schema for all custom fields in the specified project.
+
+### Issue Queries
+
+When listing or filtering issues, YouTrack uses its own query language. See the [YouTrack Query Syntax documentation](https://www.jetbrains.com/help/youtrack/incloud/Search-and-Command-Attributes.html) for details.
+
+### Webhooks
+
+For webhook triggers, you need to configure webhook subscriptions in your YouTrack instance. The YouTrack Trigger node will provide you with the webhook URL to use during setup.
 
 ## Resources
 
