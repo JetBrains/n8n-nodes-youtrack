@@ -8,12 +8,12 @@
 		"n8n-community-node-package"
 	],
 	"author": {
-		"name": "Elias Meire",
-		"email": "elias@meire.dev"
+		"name": "tbu",
+		"email": "tbu"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/youtrack/n8n-nodes-youtrack.git"
+		"url": "https://github.com/JetBrains/n8n-nodes-youtrack.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",

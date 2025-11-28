@@ -69,7 +69,7 @@ const YOUTRACK_EVENTS = [
 // Extract event values for validation
 const EVENT_VALUES: string[] = YOUTRACK_EVENTS.map(e => e.value);
 
-export class YouTrackTrigger implements INodeType {
+export class YoutrackTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'YouTrack Trigger',
 		name: 'youtrackTrigger',

@@ -1,7 +1,7 @@
 import {INodeType, INodeTypeDescription} from 'n8n-workflow';
 import {nodeProperties} from './resources';
 
-export class YouTrack implements INodeType {
+export class Youtrack implements INodeType {
     description: INodeTypeDescription = {
         // Basic node details
         displayName: 'YouTrack',
