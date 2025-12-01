@@ -20,6 +20,7 @@ export class Youtrack implements INodeType {
             {
                 name: 'youTrackApi',
                 required: true,
+                displayName: 'Credentials to Connect to YouTrack',
             },
         ],
         requestDefaults: {
