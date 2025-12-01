@@ -7,7 +7,7 @@ YouTrack is a project management and issue tracking tool by JetBrains that helps
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
 [Installation](#installation)  
-[Operations](#operations)  
+[Actions](#actions)  
 [Credentials](#credentials)  
 [Compatibility](#compatibility)  
 [Usage](#usage)  
@@ -17,7 +17,12 @@ YouTrack is a project management and issue tracking tool by JetBrains that helps
 
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
-## Operations
+## Actions
+Actions allow users to integrate the [YouTrack REST API](https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html) in their n8n workflows.
+
+<img src="images/action.png" alt="drawing" width="400"/>
+
+
 
 The YouTrack node supports the following resources and operations:
 
@@ -79,6 +84,8 @@ The YouTrack node supports the following resources and operations:
 ## YouTrack Trigger (Webhook)
 
 The YouTrack Trigger node allows you to start workflows automatically when events occur in YouTrack (e.g., issue created, updated, deleted).
+
+<img src="images/trigger.png" alt="drawing" width="400"/>
 
 ### Supported Events
 

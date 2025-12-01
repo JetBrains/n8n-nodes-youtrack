@@ -5,7 +5,7 @@ import type {
 
 export class YouTrackWebhookApi implements ICredentialType {
 	name = 'youTrackWebhookApi';
-	displayName = 'YouTrack Webhook Auth API';
+	displayName = 'YouTrack Webhook Auth';
 	documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html';
 	properties: INodeProperties[] = [
 		{
