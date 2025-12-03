@@ -47,7 +47,7 @@ export const tagListDescription: INodeProperties[] = [
 				name: 'query',
 				type: 'string',
 				default: '',
-				placeholder: 'bug',
+				placeholder: 'e.g. bug',
 				description: 'Filter tags by name',
 				routing: {
 					send: {

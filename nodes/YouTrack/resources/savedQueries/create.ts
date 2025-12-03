@@ -14,7 +14,7 @@ export const savedQueriesCreateDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'Requires Attention',
+		placeholder: 'e.g. Requires Attention',
 		description: 'The name of the saved search',
 		routing: {
 			send: {
@@ -36,7 +36,7 @@ export const savedQueriesCreateDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'Priority: Major, Critical, Show-stopper #Unresolved',
+		placeholder: 'e.g. Priority: Major, Critical, Show-stopper #Unresolved',
 		description: 'The YouTrack query string to save. Examples: "Priority: Major", "for: me", "project: MyProject #Unresolved".',
 		routing: {
 			send: {

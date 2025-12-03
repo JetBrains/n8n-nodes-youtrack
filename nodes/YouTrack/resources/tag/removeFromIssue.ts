@@ -14,7 +14,7 @@ export const tagRemoveFromIssueDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: '6-4',
+		placeholder: 'e.g. 6-4',
 		description: 'Tag ID to remove from the issue (e.g., 6-4). You can get tag IDs by listing issue tags first.',
 	},
 ];

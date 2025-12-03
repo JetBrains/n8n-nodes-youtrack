@@ -15,7 +15,7 @@ export class YouTrackApi implements ICredentialType {
             name: 'url',
             type: 'string',
             default: '',
-            placeholder: 'http://localhost:8088',
+            placeholder: 'e.g. http://localhost:8088',
             description: 'The base URL of your YouTrack instance (without /api)',
             required: true,
         },

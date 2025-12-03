@@ -33,7 +33,7 @@ export const projectGetIssuesDescription: INodeProperties[] = [
 				name: 'customFields',
 				type: 'string',
 				default: '',
-				placeholder: 'type,assignee,priority',
+				placeholder: 'e.g. type,assignee,priority',
 				description: 'Comma-separated list of custom field names to include. Use multiple times for multiple fields.',
 				routing: {
 					send: {

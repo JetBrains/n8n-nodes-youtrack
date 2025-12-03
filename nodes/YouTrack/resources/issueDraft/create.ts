@@ -15,7 +15,7 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: '0-0',
+		placeholder: 'e.g. 0-0',
 		description: 'Project database ID (e.g., 0-0). Use the Get Projects operation to find the ID if you only have the short name.',
 		routing: {
 			send: {
@@ -69,7 +69,7 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'Draft title',
+		placeholder: 'e.g. Draft title',
 		description: 'Issue draft title/summary',
 		routing: {
 			send: {

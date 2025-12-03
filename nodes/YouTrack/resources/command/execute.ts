@@ -16,7 +16,7 @@ export const commandExecuteDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'tag MyTag for me',
+		placeholder: 'e.g. tag MyTag for me',
 		description:
 			'YouTrack command string. Examples: "tag MyTag", "for me", "tag To deploy for jane.doe", "vote+1", "star username", "work 2h Fixed bug", "visible to Developers", "add visible to john.doe". Note: "vote+1" cannot be used on your own issues. Any unrecognized words will be treated as tag names. For assignee commands, use "for me" (current user) or "for username" (must be a valid YouTrack username - if you get "Assignee expected" error, verify the username exists).',
 		routing: {

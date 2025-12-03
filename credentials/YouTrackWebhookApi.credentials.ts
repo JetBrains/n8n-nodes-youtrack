@@ -45,7 +45,7 @@ export class YouTrackWebhookApi implements ICredentialType {
 			default: '',
 			description: 'The secret token used to authenticate incoming webhooks. Generate a random secure token and configure it in your YouTrack app.',
 			required: true,
-			placeholder: 'e.g., my-secret-webhook-token-12345',
+			placeholder: 'e.g. my-secret-webhook-token-12345',
 		},
 	];
 

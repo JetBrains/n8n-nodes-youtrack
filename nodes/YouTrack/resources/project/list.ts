@@ -47,7 +47,7 @@ export const projectListDescription: INodeProperties[] = [
 				name: 'query',
 				type: 'string',
 				default: '',
-				placeholder: 'Sample Project',
+				placeholder: 'e.g. Sample Project',
 				description: 'Filter projects by name or short name',
 				routing: {
 					send: {

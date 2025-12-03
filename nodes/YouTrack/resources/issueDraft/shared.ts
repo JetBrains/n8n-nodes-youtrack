@@ -14,7 +14,7 @@ export const issueDraftSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: '1-1',
+		placeholder: 'e.g. 1-1',
 		description: 'The ID of the draft to retrieve, update, or delete (e.g., 1-1)',
 	},
 ]

@@ -16,7 +16,7 @@ export const commandSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'PROJECT-123, PROJECT-124, 2-15',
+		placeholder: 'e.g. PROJECT-123, PROJECT-124, 2-15',
 		description:
 			'Comma-separated list of issue IDs for bulk operations. Examples: "PROJECT-123, PROJECT-124" (readable IDs) or "2-15, 2-16" (database IDs). Supports mixing both formats. The command will be applied to all listed issues.',
 		routing: {

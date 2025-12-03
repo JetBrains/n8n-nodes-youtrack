@@ -14,7 +14,7 @@ export const issueSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'PROJECT-123',
+		placeholder: 'e.g. PROJECT-123',
 		description: 'The ID of the issue to retrieve, update, or delete (e.g., PROJECT-123)',
 	},
 ]

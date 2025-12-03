@@ -14,7 +14,7 @@ export const issueCreateDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'SP or 0-0',
+		placeholder: 'e.g. SP or 0-0',
 		description: 'Project short name (e.g., SP, BUG) or database ID (e.g., 0-0)',
 	},
 
@@ -31,7 +31,7 @@ export const issueCreateDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'Issue title',
+		placeholder: 'e.g. Issue title',
 		description: 'Issue title/summary',
 		routing: {
 			send: {

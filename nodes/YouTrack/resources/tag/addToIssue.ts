@@ -14,7 +14,7 @@ export const tagAddToIssueDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: '6-4',
+		placeholder: 'e.g. 6-4',
 		description: 'Tag ID to add to the issue (e.g., 6-4). You can get tag IDs by listing tags first.',
 		routing: {
 			send: {

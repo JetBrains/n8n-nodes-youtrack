@@ -14,7 +14,7 @@ export const userSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: '1-0 or jane.doe',
+		placeholder: 'e.g. 1-0 or jane.doe',
 		description: 'The database ID (e.g., 1-0) or login (e.g., jane.doe) of the user',
 	},
 ];

@@ -14,7 +14,7 @@ export const projectSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: '0-0 or SP',
+		placeholder: 'e.g. 0-0 or SP',
 		description: 'Project ID (e.g., 0-0) or short name (e.g., SP)',
 	},
 

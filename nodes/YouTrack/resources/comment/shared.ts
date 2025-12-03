@@ -14,7 +14,7 @@ export const commentSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'PROJECT-123',
+		placeholder: 'e.g. PROJECT-123',
 		description: 'The ID of the issue (e.g., PROJECT-123)',
 	},
 ]

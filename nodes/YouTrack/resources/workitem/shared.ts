@@ -14,7 +14,7 @@ export const workItemSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: 'PROJECT-123',
+		placeholder: 'e.g. PROJECT-123',
 		description: 'The ID of the issue to add work item to (e.g., PROJECT-123)',
 	},
 ];

@@ -34,7 +34,7 @@ export const issueListDescription: INodeProperties[] = [
 				name: 'query',
 				type: 'string',
 				default: '',
-				placeholder: 'project: MyProject',
+				placeholder: 'e.g. project: MyProject',
 				description: 'YouTrack search query to filter issues. If not provided, returns all issues.',
 				routing: {
 					send: {

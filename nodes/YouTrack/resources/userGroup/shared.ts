@@ -14,7 +14,7 @@ export const userGroupSharedDescription: INodeProperties[] = [
 			},
 		},
 		default: '',
-		placeholder: '3-0',
+		placeholder: 'e.g. 3-0',
 		description: 'The database ID of the user group (e.g., 3-0)',
 	},
 ];
