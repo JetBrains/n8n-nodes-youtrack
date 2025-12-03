@@ -30,7 +30,7 @@ export const commentAddDescription: INodeProperties[] = [
 		displayName: 'Additional Options',
 		name: 'additionalOptions',
 		type: 'collection',
-		placeholder: 'Add Option',
+		placeholder: 'Add Field',
 		default: {},
 		displayOptions: {
 			show: {
@@ -39,19 +39,6 @@ export const commentAddDescription: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'Use Markdown',
-				name: 'usesMarkdown',
-				type: 'boolean',
-				default: true,
-				description: 'Whether the comment text uses Markdown formatting',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'usesMarkdown',
-					},
-				},
-			},
 			{
 				displayName: 'Fields to Return',
 				name: 'fields',

@@ -88,19 +88,6 @@ export const workItemAddDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Use Markdown',
-				name: 'usesMarkdown',
-				type: 'boolean',
-				default: true,
-				description: 'Whether the work item description uses Markdown formatting',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'usesMarkdown',
-					},
-				},
-			},
-			{
 				displayName: 'Fields to Return',
 				name: 'fields',
 				type: 'string',
