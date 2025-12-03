@@ -30,7 +30,7 @@ export const commentAddDescription: INodeProperties[] = [
 		displayName: 'Additional Options',
 		name: 'additionalOptions',
 		type: 'collection',
-		placeholder: 'Add Field',
+		placeholder: 'Add Fields',
 		default: {},
 		displayOptions: {
 			show: {

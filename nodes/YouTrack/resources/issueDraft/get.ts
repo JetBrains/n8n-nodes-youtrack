@@ -6,7 +6,7 @@ export const issueDraftGetDescription: INodeProperties[] = [
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
-		placeholder: 'Add Field',
+		placeholder: 'Add Fields',
 		default: {},
 		displayOptions: {
 			show: {

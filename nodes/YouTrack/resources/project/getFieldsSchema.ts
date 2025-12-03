@@ -3,10 +3,10 @@ import { INodeProperties } from 'n8n-workflow';
 export const projectGetFieldsSchemaDescription: INodeProperties[] = [
 	// Additional Fields Section
 	{
-		displayName: 'Additional Fields',
+		displayName: 'Additional Options',
 		name: 'additionalFields',
 		type: 'collection',
-		placeholder: 'Add Field',
+		placeholder: 'Add Option',
 		default: {},
 		displayOptions: {
 			show: {
