@@ -39,6 +39,16 @@ export const issueDraftDescription: INodeProperties[] = [
 						method: 'DELETE',
 						url: '=/users/me/drafts/{{$parameter.draftId}}',
 					},
+					output: {
+						postReceive: [
+							{
+								type: 'set',
+								properties: {
+									value: '={{ { "deleted": true } }}',
+								},
+							},
+						],
+					},
 				},
 			},
 			{

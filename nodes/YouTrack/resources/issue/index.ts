@@ -39,6 +39,16 @@ export const issueDescription: INodeProperties[] = [
 						method: 'DELETE',
 						url: '=/issues/{{$parameter.issueId}}',
 					},
+					output: {
+						postReceive: [
+							{
+								type: 'set',
+								properties: {
+									value: '={{ { "deleted": true } }}',
+								},
+							},
+						],
+					},
 				},
 			},
 			{

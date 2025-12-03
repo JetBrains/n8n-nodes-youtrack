@@ -69,6 +69,16 @@ export const tagDescription: INodeProperties[] = [
 						method: 'DELETE',
 						url: '=/issues/{{$parameter.issueId}}/tags/{{$parameter.tagId}}',
 					},
+					output: {
+						postReceive: [
+							{
+								type: 'set',
+								properties: {
+									value: '={{ { "deleted": true } }}',
+								},
+							},
+						],
+					},
 				},
 			},
 		],
