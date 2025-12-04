@@ -91,7 +91,7 @@ export class YoutrackTrigger implements INodeType {
 			},
 			{
 				name: 'youTrackWebhookAuthApi',
-				required: false,
+				required: true,
 				displayName: 'Authenticate Incoming Webhook',
 			},
 		],
