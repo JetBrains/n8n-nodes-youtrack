@@ -3,8 +3,8 @@ import type {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class YouTrackWebhookApi implements ICredentialType {
-	name = 'youTrackWebhookApi';
+export class YouTrackWebhookAuthApi implements ICredentialType {
+	name = 'youTrackWebhookAuthApi';
 	displayName = 'YouTrack Webhook Auth API';
 	documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html';
 	properties: INodeProperties[] = [
