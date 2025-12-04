@@ -83,6 +83,7 @@ export class YoutrackTrigger implements INodeType {
 		},
 		inputs: [],
 		outputs: ['main'],
+		usableAsTool: undefined,
 		credentials: [
 			{
 				name: 'permanentTokenCredentialForYouTrackApi',
