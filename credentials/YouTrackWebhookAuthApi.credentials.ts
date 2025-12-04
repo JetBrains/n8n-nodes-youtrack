@@ -48,6 +48,8 @@ export class YouTrackWebhookAuthApi implements ICredentialType {
 			placeholder: 'e.g. my-secret-webhook-token-12345',
 		},
 	];
+	authenticate = undefined;
+	test = undefined;
 
 	icon = 'file:jetbrains-youtrack-icon.svg' as const;
 }
