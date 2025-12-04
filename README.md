@@ -1,5 +1,7 @@
 # n8n-nodes-youtrack
 
+[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://github.com/JetBrains#jetbrains-on-github)
+
 This is an n8n community node. It lets you use YouTrack in your n8n workflows.
 
 YouTrack is a project management and issue tracking tool by JetBrains that helps teams manage projects, track issues, and collaborate effectively.
