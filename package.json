@@ -32,7 +32,7 @@
 		"n8nNodesApiVersion": 1,
 		"strict": true,
 		"credentials": [
-			"dist/credentials/YouTrackApi.credentials.js",
+			"dist/credentials/PermanentTokenCredentialForYouTrackApi.credentials.js",
 			"dist/credentials/YouTrackWebhookApi.credentials.js"
 		],
 		"nodes": [

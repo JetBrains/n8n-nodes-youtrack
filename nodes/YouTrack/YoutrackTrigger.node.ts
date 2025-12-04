@@ -85,7 +85,7 @@ export class YoutrackTrigger implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'youTrackApi',
+				name: 'permanentTokenCredentialForYouTrackApi',
 				required: true,
 				displayName: 'Credentials to Connect to YouTrack',
 			},

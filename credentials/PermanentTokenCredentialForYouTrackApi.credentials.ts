@@ -5,9 +5,9 @@ import type {
     INodeProperties,
 } from 'n8n-workflow';
 
-export class YouTrackApi implements ICredentialType {
-    name = 'youTrackApi';
-    displayName = 'YouTrack API';
+export class PermanentTokenCredentialForYouTrackApi implements ICredentialType {
+    name = 'permanentTokenCredentialForYouTrackApi';
+    displayName = 'Permanent Token Credential for YouTrack API';
     documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html';
     properties: INodeProperties[] = [
         {
