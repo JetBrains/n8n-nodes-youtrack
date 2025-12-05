@@ -51,7 +51,7 @@ export class YouTrackWebhookAuthApi implements ICredentialType {
 	authenticate = undefined;
 	test = undefined;
 
-	icon = 'file:jetbrains-youtrack-icon.svg' as const;
+	icon = 'file:../../common/jetbrains-youtrack-icon.svg' as const;
 }
 
 

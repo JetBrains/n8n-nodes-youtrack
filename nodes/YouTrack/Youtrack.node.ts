@@ -6,7 +6,7 @@ export class Youtrack implements INodeType {
         // Basic node details
         displayName: 'YouTrack',
         name: 'youtrack',
-        icon: 'file:jetbrains-youtrack-icon.svg',
+        icon: 'file:../../common/jetbrains-youtrack-icon.svg',
         group: ['transform'],
         version: 1,
         subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',

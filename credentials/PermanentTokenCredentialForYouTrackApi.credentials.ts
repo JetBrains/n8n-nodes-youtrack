@@ -49,6 +49,6 @@ export class PermanentTokenCredentialForYouTrackApi implements ICredentialType {
 		},
 	};
 
-	icon = 'file:jetbrains-youtrack-icon.svg' as const;
+	icon = 'file:../../common/jetbrains-youtrack-icon.svg' as const;
 
 }

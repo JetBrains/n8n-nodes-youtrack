@@ -73,7 +73,7 @@ export class YoutrackTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'YouTrack Trigger',
 		name: 'youtrackTrigger',
-		icon: 'file:jetbrains-youtrack-icon.svg',
+		icon: 'file:../../common/jetbrains-youtrack-icon.svg',
 		group: ['trigger'],
 		version: 2,
 		subtitle: '={{$parameter["events"] && $parameter["events"].length > 0 ? $parameter["events"].join(", ") : "No events selected"}}',
@@ -150,7 +150,7 @@ export class YoutrackTrigger implements INodeType {
 
 		// Validate authentication if webhook credential is configured
 		try {
-			const webhookCredentials = await this.getCredentials('youTrackWebhookApi');
+			const webhookCredentials = await this.getCredentials('youTrackWebhookAuthApi');
 			
 			if (webhookCredentials) {
 				const authMethod = webhookCredentials.authMethod as string;
