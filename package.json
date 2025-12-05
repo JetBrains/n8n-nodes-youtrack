@@ -2,8 +2,8 @@
 	"name": "n8n-nodes-youtrack",
 	"version": "0.1.0",
 	"description": "Custom n8n node for YouTrack",
-	"license": "MIT",
-	"homepage": "",
+	"license": "Apache-2.0",
+	"homepage": "tbu",
 	"keywords": [
 		"n8n-community-node-package"
 	],
@@ -19,8 +19,8 @@
 		"build": "n8n-node build",
 		"build:watch": "tsc --watch",
 		"dev": "n8n-node dev",
-		"lint": "n8n-node lint",
-		"lint:fix": "n8n-node lint --fix",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"release": "n8n-node release",
 		"prepublishOnly": "n8n-node prerelease",
 		"test": "vitest run"
@@ -41,17 +41,16 @@
 		]
 	},
 	"devDependencies": {
-		"@n8n/node-cli": "0.10.0",
-		"change-case": "4.1.2",
+		"@eslint/js": "^9.39.1",
+		"@n8n/eslint-plugin-community-nodes": "^0.7.0",
+		"@n8n/node-cli": "^0.17.0",
 		"eslint": "9.32.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.4",
 		"prettier": "3.6.2",
 		"release-it": "^19.0.4",
 		"typescript": "5.9.2",
+		"typescript-eslint": "^8.48.1",
 		"vitest": "^4.0.14"
-	},
-	"overrides": {
-		"change-case": "4.1.2",
-		"@n8n/eslint-plugin-community-nodes": "0.2.0"
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"
