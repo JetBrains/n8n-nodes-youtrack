@@ -45,10 +45,10 @@ export const tagDescription: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'List',
+				name: 'Get Many',
 				value: 'list',
-				description: 'List all available tags',
-				action: 'List tags',
+				description: 'Get many available tags',
+				action: 'Get many tags',
 				routing: {
 					request: {
 						method: 'GET',

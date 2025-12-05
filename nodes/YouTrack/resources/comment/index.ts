@@ -28,10 +28,10 @@ export const commentDescription: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'List',
+				name: 'Get Many',
 				value: 'list',
-				description: 'List all comments on an issue',
-				action: 'List comments',
+				description: 'Get many comments on an issue',
+				action: 'Get many comments',
 				routing: {
 					request: {
 						method: 'GET',

@@ -17,10 +17,10 @@ export const userGroupDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'List',
+				name: 'Get Many',
 				value: 'list',
-				description: 'List user groups',
-				action: 'List user groups',
+				description: 'Get many user groups',
+				action: 'Get many user groups',
 				routing: {
 					request: {
 						method: 'GET',

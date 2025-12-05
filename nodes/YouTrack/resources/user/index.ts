@@ -106,10 +106,10 @@ export const userDescription: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'List',
+				name: 'Get Many',
 				value: 'list',
-				description: 'List users',
-				action: 'List users',
+				description: 'Get many users',
+				action: 'Get many users',
 				routing: {
 					request: {
 						method: 'GET',

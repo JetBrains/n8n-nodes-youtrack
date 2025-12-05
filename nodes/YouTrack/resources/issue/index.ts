@@ -64,10 +64,10 @@ export const issueDescription: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'List',
+				name: 'Get Many',
 				value: 'list',
-				description: 'List issues',
-				action: 'List issues',
+				description: 'Get many issues',
+				action: 'Get many issues',
 				routing: {
 					request: {
 						method: 'GET',

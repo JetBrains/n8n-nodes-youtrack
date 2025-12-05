@@ -45,7 +45,7 @@ export const resourceSelection: INodeProperties = {
 		{
 			name: 'Saved Query',
 			value: 'savedQueries',
-			description: 'List and create saved searches',
+			description: 'Get many and create saved searches',
 		},
 		{
 			name: 'Tag',

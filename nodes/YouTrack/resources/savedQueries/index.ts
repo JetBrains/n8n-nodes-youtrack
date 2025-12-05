@@ -15,10 +15,10 @@ export const savedQueriesDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'List',
+				name: 'Get many',
 				value: 'list',
-				description: 'List all saved queries visible to the current user',
-				action: 'List saved queries',
+				description: 'Get many saved queries visible to the current user',
+				action: 'Get many saved queries',
 				routing: {
 					request: {
 						method: 'GET',
