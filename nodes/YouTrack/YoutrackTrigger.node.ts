@@ -73,7 +73,7 @@ export class YoutrackTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'YouTrack Trigger',
 		name: 'youtrackTrigger',
-		icon: 'file:../../common/jetbrains-youtrack-icon.svg',
+		icon: 'file:../../common/youtrack-logo.svg',
 		group: ['trigger'],
 		version: 2,
 		subtitle: '={{$parameter["events"] && $parameter["events"].length > 0 ? $parameter["events"].join(", ") : "No events selected"}}',
