@@ -58,6 +58,18 @@ export const userDescription: INodeProperties[] = [
 				},
 			},
 			{
+				name: 'Get Many',
+				value: 'list',
+				description: 'Get many users',
+				action: 'Get many users',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '/users',
+					},
+				},
+			},
+			{
 				name: 'Get Notifications Profile',
 				value: 'getNotificationsProfile',
 				description: 'Get notification settings for a specific user',
@@ -104,19 +116,7 @@ export const userDescription: INodeProperties[] = [
 						url: '=/users/{{$parameter.userId}}/profiles/timetracking',
 					},
 				},
-			},
-			{
-				name: 'Get Many',
-				value: 'list',
-				description: 'Get many users',
-				action: 'Get many users',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/users',
-					},
-				},
-			},
+			}
 		],
 		default: 'list',
 		noDataExpression: true,

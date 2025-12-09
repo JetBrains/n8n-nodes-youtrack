@@ -15,7 +15,7 @@ export const savedQueriesDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get many',
+				name: 'Get Many',
 				value: 'list',
 				description: 'Get many saved queries visible to the current user',
 				action: 'Get many saved queries',
