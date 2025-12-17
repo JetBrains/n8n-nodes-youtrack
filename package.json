@@ -39,8 +39,8 @@
 			"dist/credentials/YouTrackWebhookAuthApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/YouTrack/YouTrack.node.js",
-			"dist/nodes/YouTrack/YouTrackTrigger.node.js"
+			"dist/nodes/YouTrack/Youtrack.node.js",
+			"dist/nodes/YouTrack/YoutrackTrigger.node.js"
 		]
 	},
 	"devDependencies": {
