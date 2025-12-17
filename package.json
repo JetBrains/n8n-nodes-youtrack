@@ -22,6 +22,9 @@
 		"prepublishOnly": "n8n-node prerelease",
 		"test": "vitest run"
 	},
+	"publishConfig": {
+    "access": "public"
+  },
 	"files": [
 		"dist"
 	],
