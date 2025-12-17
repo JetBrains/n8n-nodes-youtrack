@@ -129,9 +129,10 @@ The node uses Bearer token authentication and will automatically include the tok
 
 ## Compatibility
 
-- **Minimum n8n version**: 1.0.0
-- **Tested with**: n8n 1.0.0 and later
+- **n8n Nodes API Version**: 1
 - **YouTrack API**: Compatible with YouTrack REST API
+
+**Note**: This node requires n8n version that supports community nodes with API version 1. If you encounter compatibility issues, please ensure you're using a recent version of n8n.
 
 ## Usage
 
