@@ -1,4 +1,4 @@
-# n8n-nodes-youtrack
+# @jetbrains/n8n-nodes-youtrack
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://github.com/JetBrains#jetbrains-on-github)
 
