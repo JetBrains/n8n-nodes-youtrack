@@ -3,14 +3,11 @@
 	"version": "0.1.0",
 	"description": "Custom n8n node for YouTrack",
 	"license": "Apache-2.0",
-	"homepage": "tbu",
+	"homepage": "https://github.com/JetBrains/n8n-nodes-youtrack",
 	"keywords": [
 		"n8n-community-node-package"
 	],
-	"author": {
-		"name": "tbu",
-		"email": "tbu"
-	},
+	"author": "JetBrains",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/JetBrains/n8n-nodes-youtrack.git"
