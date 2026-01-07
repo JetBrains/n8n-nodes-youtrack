@@ -8,7 +8,7 @@ export const projectGetIssuesDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'id,idReadable,summary,description,created,updated,resolved',
+			fields: 'id,idReadable,summary,description,created,updated,resolved,customFields(name,value)',
 		},
 		displayOptions: {
 			show: {
@@ -21,27 +21,12 @@ export const projectGetIssuesDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,idReadable,summary,description,created,updated,resolved',
-				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned.',
+				default: 'id,idReadable,summary,description,created,updated,resolved,customFields(name,value)',
+				description: 'Comma-separated list of fields to return. Include customFields(name,value) to get custom fields. If not specified, only entityID is returned.',
 				routing: {
 					send: {
 						type: 'query',
 						property: 'fields',
-					},
-				},
-			},
-			// TODO:- not working?
-			{
-				displayName: 'Custom Fields',
-				name: 'customFields',
-				type: 'string',
-				default: '',
-				placeholder: 'e.g. type,assignee,priority',
-				description: 'Comma-separated list of custom field names to include. Use multiple times for multiple fields.',
-				routing: {
-					send: {
-						type: 'query',
-						property: 'customFields',
 					},
 				},
 			},
