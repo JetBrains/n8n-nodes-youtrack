@@ -1,4 +1,6 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties} from 'n8n-workflow';
+
+const DEFAULT_FIELDS = 'id,name,query,issues(idReadable)';
 
 export const userGetSavedQueriesDescription: INodeProperties[] = [
 	// Additional Options
@@ -8,7 +10,7 @@ export const userGetSavedQueriesDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'id,name,query,issues(idReadable)',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -21,7 +23,7 @@ export const userGetSavedQueriesDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,query,issues(idReadable)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {

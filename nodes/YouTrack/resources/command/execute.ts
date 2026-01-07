@@ -2,6 +2,8 @@ import type { INodeProperties } from 'n8n-workflow';
 import type { CommandExecuteRequestBody } from '../types';
 import { normalizeCommandQuery, validateCommandQuery, normalizeComment } from './utils';
 
+const DEFAULT_FIELDS = 'issues(id,idReadable),query,visibility(permittedGroups(id,name),permittedUsers(id,login))';
+
 export const commandExecuteDescription: INodeProperties[] = [
 	// Command: Query (required)
 	{
@@ -47,7 +49,7 @@ export const commandExecuteDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'issues(id,idReadable),query,visibility(permittedGroups(id,name),permittedUsers(id,login))',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -88,7 +90,7 @@ export const commandExecuteDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'issues(id,idReadable),query,visibility(permittedGroups(id,name),permittedUsers(id,login))',
+				default: DEFAULT_FIELDS,
 				description:
 					'Comma-separated list of fields to return in response. Example: issues(ID,idReadable,summary),query.',
 				routing: {

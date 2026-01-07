@@ -1,5 +1,7 @@
 import { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,idReadable,summary,description,created,updated,resolved';
+
 export const issueDraftListDescription: INodeProperties[] = [
 	// Return All toggle
 	{
@@ -22,7 +24,7 @@ export const issueDraftListDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'id,idReadable,summary,description,created,updated,resolved',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -35,7 +37,7 @@ export const issueDraftListDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,idReadable,summary,description,created,updated,resolved',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {

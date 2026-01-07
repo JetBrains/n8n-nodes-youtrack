@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,login,fullName,email,avatarUrl,online,banned';
+
 export const userListDescription: INodeProperties[] = [
 	// Return All toggle
 	{
@@ -22,7 +24,7 @@ export const userListDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'id,login,fullName,email,avatarUrl,online,banned',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -35,7 +37,7 @@ export const userListDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,login,fullName,email,avatarUrl,online,banned',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {

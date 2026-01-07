@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,name,query,owner(login,name),visibleFor(name,id),issues(id,idReadable,summary)';
+
 export const savedQueriesCreateDescription: INodeProperties[] = [
 	// Saved Queries: Create - Name
 	{
@@ -52,7 +54,7 @@ export const savedQueriesCreateDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'id,name,query,owner(login,name),visibleFor(name,id),issues(id,idReadable,summary)',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -65,7 +67,7 @@ export const savedQueriesCreateDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,query,owner(login,name),visibleFor(name,id),issues(id,idReadable,summary)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return in response. If not specified, only entityID is returned.',
 				routing: {
 					send: {

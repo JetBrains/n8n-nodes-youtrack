@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,dateFieldFormat(id,presentation,pattern,datePattern),timezone(id,presentation,offset),locale(id,name,community,language,locale)';
+
 export const userGetGeneralProfileDescription: INodeProperties[] = [
 	// Additional Options
 	{
@@ -8,7 +10,7 @@ export const userGetGeneralProfileDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'id,dateFieldFormat(id,presentation,pattern,datePattern),timezone(id,presentation,offset),locale(id,name,community,language,locale)',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -21,7 +23,7 @@ export const userGetGeneralProfileDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,dateFieldFormat(id,presentation,pattern,datePattern),timezone(id,presentation,offset),locale(id,name,community,language,locale)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {

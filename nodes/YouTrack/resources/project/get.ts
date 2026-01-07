@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,name,shortName,description,archived,leader(login,name)';
+
 export const projectGetDescription: INodeProperties[] = [
 	// Additional Fields
 	{
@@ -8,7 +10,7 @@ export const projectGetDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Fields',
 		default: {
-			fields: 'id,name,shortName,description,archived,leader(login,name)',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -21,7 +23,7 @@ export const projectGetDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,shortName,description,archived,leader(login,name)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {

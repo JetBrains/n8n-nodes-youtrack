@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,notifyOnOwnChanges,emailNotificationsEnabled,mentionNotificationsEnabled,duplicateClusterNotificationsEnabled,mailboxIntegrationNotificationsEnabled,usePlainTextEmails,autoWatchOnComment,autoWatchOnVote,autoWatchOnUpdate';
+
 export const userGetNotificationsProfileDescription: INodeProperties[] = [
 	// Additional Options
 	{
@@ -8,7 +10,7 @@ export const userGetNotificationsProfileDescription: INodeProperties[] = [
 		type: 'collection',
 		placeholder: 'Add Option',
 		default: {
-			fields: 'id,notifyOnOwnChanges,emailNotificationsEnabled,mentionNotificationsEnabled,duplicateClusterNotificationsEnabled,mailboxIntegrationNotificationsEnabled,usePlainTextEmails,autoWatchOnComment,autoWatchOnVote,autoWatchOnUpdate',
+			fields: DEFAULT_FIELDS,
 		},
 		displayOptions: {
 			show: {
@@ -21,7 +23,7 @@ export const userGetNotificationsProfileDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,notifyOnOwnChanges,emailNotificationsEnabled,mentionNotificationsEnabled,duplicateClusterNotificationsEnabled,mailboxIntegrationNotificationsEnabled,usePlainTextEmails,autoWatchOnComment,autoWatchOnVote,autoWatchOnUpdate',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {
