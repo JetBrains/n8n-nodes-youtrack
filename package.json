@@ -1,6 +1,6 @@
 {
 	"name": "@jetbrains/n8n-nodes-youtrack",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Custom n8n node for YouTrack",
 	"license": "Apache-2.0",
 	"homepage": "https://github.com/JetBrains/n8n-nodes-youtrack",
