@@ -36,9 +36,6 @@ export const commentDescription: INodeProperties[] = [
 					request: {
 						method: 'GET',
 						url: '=/issues/{{$parameter.issueId}}/comments',
-						qs: {
-							fields: 'id,text,created,updated,author(login,name)',
-						},
 					},
 				},
 			},
