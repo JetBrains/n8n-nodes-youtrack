@@ -1,6 +1,8 @@
 import {INodeProperties, NodeOperationError} from 'n8n-workflow';
 import type { IssueDraftCreateRequestBody } from '../types';
 
+const DEFAULT_FIELDS = 'id,idReadable,summary';
+
 export const issueDraftCreateDescription: INodeProperties[] = [
 	// Project parameter
 	{
@@ -85,7 +87,9 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['issueDraft'],
@@ -110,10 +114,10 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,summary,project',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return in response. If not specified, only entityID is returned.',
 				routing: {
 					send: {

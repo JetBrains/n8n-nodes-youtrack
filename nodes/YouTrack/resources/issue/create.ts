@@ -1,5 +1,7 @@
 import { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,idReadable,summary';
+
 export const issueCreateDescription: INodeProperties[] = [
 	// Project parameter
 	{
@@ -47,7 +49,9 @@ export const issueCreateDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['issue'],
@@ -72,10 +76,10 @@ export const issueCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,idReadable,summary',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return in response. If not specified, only entityID is returned.',
 				routing: {
 					send: {

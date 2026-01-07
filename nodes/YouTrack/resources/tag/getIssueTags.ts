@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id)';
+
 export const tagGetIssueTagsDescription: INodeProperties[] = [
 	// Tag: Get Issue Tags - Additional Options
 	{
@@ -7,7 +9,9 @@ export const tagGetIssueTagsDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['tag'],
@@ -19,7 +23,7 @@ export const tagGetIssueTagsDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),$type',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return',
 				routing: {
 					send: {
@@ -31,18 +35,5 @@ export const tagGetIssueTagsDescription: INodeProperties[] = [
 		],
 	},
 
-	// Note: Alternative way to get issue tags
-	{
-		displayName: 'Note',
-		name: 'note',
-		type: 'notice',
-		displayOptions: {
-			show: {
-				resource: ['tag'],
-				operation: ['getIssueTags'],
-			},
-		},
-		default: 'Private tags (like "Star") may not appear in this list due to API limitations. To see all tags including private ones, use Issue > Get operation and include "tags(id,name)" in the fields parameter.',
-	},
 ];
 

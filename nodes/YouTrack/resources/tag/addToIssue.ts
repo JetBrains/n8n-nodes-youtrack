@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,name,owner(login,name)';
+
 export const tagAddToIssueDescription: INodeProperties[] = [
 	// Tag: Add to Issue - Tag ID
 	{
@@ -30,7 +32,9 @@ export const tagAddToIssueDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['tag'],
@@ -39,10 +43,10 @@ export const tagAddToIssueDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,owner(login,name)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return in response',
 				routing: {
 					send: {

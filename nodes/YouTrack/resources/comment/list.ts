@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,text,created,updated,author(login,name)';
+
 export const commentListDescription: INodeProperties[] = [
 	// Return All toggle
 	{
@@ -21,7 +23,9 @@ export const commentListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['comment'],
@@ -33,7 +37,7 @@ export const commentListDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,text,created,updated,author(login,name)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return',
 				routing: {
 					send: {

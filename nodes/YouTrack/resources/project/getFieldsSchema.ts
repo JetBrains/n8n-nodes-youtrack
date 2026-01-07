@@ -1,5 +1,7 @@
 import { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,field(name,id),project(shortName),canBeEmpty,isPublic';
+
 export const projectGetFieldsSchemaDescription: INodeProperties[] = [
 	// Additional Fields Section
 	{
@@ -7,7 +9,9 @@ export const projectGetFieldsSchemaDescription: INodeProperties[] = [
 		name: 'additionalFields',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['project'],
@@ -19,7 +23,7 @@ export const projectGetFieldsSchemaDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,field(name,id),project(shortName),canBeEmpty,isPublic',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of ProjectCustomField attributes to return. If not specified, only entityID is returned.',
 				routing: {
 					send: {

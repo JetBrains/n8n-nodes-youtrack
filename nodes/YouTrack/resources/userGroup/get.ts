@@ -1,5 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+const DEFAULT_FIELDS = 'id,name,usersCount,users(id,login,fullName,email),teamForProject(name,shortName)';
+
 export const userGroupGetDescription: INodeProperties[] = [
 	// Additional Options
 	{
@@ -7,7 +9,9 @@ export const userGroupGetDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['userGroup'],
@@ -19,7 +23,7 @@ export const userGroupGetDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,usersCount,users(id,login,fullName,email),teamForProject(name,shortName)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return. If not specified, only entityID is returned. Use users(...) to include user details.',
 				routing: {
 					send: {

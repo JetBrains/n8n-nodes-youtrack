@@ -38,9 +38,6 @@ export const tagDescription: INodeProperties[] = [
 					request: {
 						method: 'GET',
 						url: '=/issues/{{$parameter.issueId}}/tags',
-						qs: {
-							fields: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),$type',
-						},
 					},
 				},
 			},
@@ -53,9 +50,6 @@ export const tagDescription: INodeProperties[] = [
 					request: {
 						method: 'GET',
 						url: '/tags',
-						qs: {
-							fields: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),untagOnResolve,$type',
-						},
 					},
 				},
 			},

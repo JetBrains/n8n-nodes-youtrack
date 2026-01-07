@@ -8,6 +8,8 @@ interface WorkItemAddRequestBody {
 	usesMarkdown?: boolean;
 }
 
+const DEFAULT_FIELDS = 'id,text,date,duration(minutes,presentation),author(login,name),creator(login,name)';
+
 export const workItemAddDescription: INodeProperties[] = [
 	// WorkItem: Add - Duration (required)
 	{
@@ -37,7 +39,9 @@ export const workItemAddDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: DEFAULT_FIELDS,
+		},
 		displayOptions: {
 			show: {
 				resource: ['workItem'],
@@ -88,10 +92,10 @@ export const workItemAddDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,text,date,duration(minutes,presentation),author(login,name),creator(login,name)',
+				default: DEFAULT_FIELDS,
 				description: 'Comma-separated list of fields to return in response',
 				routing: {
 					send: {
