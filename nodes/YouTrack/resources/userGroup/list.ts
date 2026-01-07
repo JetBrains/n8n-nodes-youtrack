@@ -21,7 +21,9 @@ export const userGroupListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,usersCount,teamForProject(name,shortName)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['userGroup'],

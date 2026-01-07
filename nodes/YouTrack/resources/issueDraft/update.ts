@@ -8,7 +8,10 @@ export const issueDraftUpdateDescription: INodeProperties[] = [
 		name: 'updateFields',
 		type: 'collection',
 		placeholder: 'Add Field',
-		default: {},
+		default: {
+			summary: '',
+			description: '',
+		},
 		displayOptions: {
 			show: {
 				resource: ['issueDraft'],
@@ -89,11 +92,28 @@ export const issueDraftUpdateDescription: INodeProperties[] = [
 					},
 				},
 			},
+		],
+	},
+	{
+		displayName: 'Additional Options',
+		name: 'additionalOptions',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {
+			fields: 'id,idReadable,summary,description',
+		},
+		displayOptions: {
+			show: {
+				resource: ['issueDraft'],
+				operation: ['update'],
+			},
+		},
+		options: [
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,summary,description,project',
+				default: 'id,idReadable,summary,description',
 				description: 'Comma-separated list of fields to return in response. If not specified, only entityID is returned.',
 				routing: {
 					send: {

@@ -21,7 +21,9 @@ export const savedQueriesListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,query,owner(login,name),visibleFor(name,id),issues(idReadable,summary)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['savedQueries'],

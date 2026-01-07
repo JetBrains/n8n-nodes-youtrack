@@ -21,7 +21,9 @@ export const issueListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,idReadable,summary,description,created,updated,resolved',
+		},
 		displayOptions: {
 			show: {
 				resource: ['issue'],

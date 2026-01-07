@@ -7,7 +7,9 @@ export const userGetSavedQueriesDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,query,issues(idReadable)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['user'],

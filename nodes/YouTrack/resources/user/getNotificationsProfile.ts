@@ -7,7 +7,9 @@ export const userGetNotificationsProfileDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,notifyOnOwnChanges,emailNotificationsEnabled,mentionNotificationsEnabled,duplicateClusterNotificationsEnabled,mailboxIntegrationNotificationsEnabled,usePlainTextEmails,autoWatchOnComment,autoWatchOnVote,autoWatchOnUpdate',
+		},
 		displayOptions: {
 			show: {
 				resource: ['user'],

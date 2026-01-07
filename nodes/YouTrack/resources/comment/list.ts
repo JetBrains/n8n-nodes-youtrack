@@ -21,7 +21,9 @@ export const commentListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,text,created,updated,author(login,name)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['comment'],

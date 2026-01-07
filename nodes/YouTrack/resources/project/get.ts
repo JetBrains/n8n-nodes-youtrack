@@ -7,7 +7,9 @@ export const projectGetDescription: INodeProperties[] = [
 		name: 'additionalFields',
 		type: 'collection',
 		placeholder: 'Add Fields',
-		default: {},
+		default: {
+			fields: 'id,name,shortName,description,archived,leader(login,name)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['project'],

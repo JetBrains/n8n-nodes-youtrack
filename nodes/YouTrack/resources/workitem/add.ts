@@ -37,7 +37,9 @@ export const workItemAddDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,text,date,duration(minutes,presentation),author(login,name),creator(login,name)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['workItem'],
@@ -88,7 +90,7 @@ export const workItemAddDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
 				default: 'id,text,date,duration(minutes,presentation),author(login,name),creator(login,name)',

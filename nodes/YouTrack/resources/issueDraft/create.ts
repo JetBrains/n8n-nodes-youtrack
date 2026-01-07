@@ -85,7 +85,9 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,idReadable,summary',
+		},
 		displayOptions: {
 			show: {
 				resource: ['issueDraft'],
@@ -110,10 +112,10 @@ export const issueDraftCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,summary,project',
+				default: 'id,idReadable,summary',
 				description: 'Comma-separated list of fields to return in response. If not specified, only entityID is returned.',
 				routing: {
 					send: {

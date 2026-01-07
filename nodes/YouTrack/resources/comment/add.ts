@@ -31,7 +31,9 @@ export const commentAddDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Fields',
-		default: {},
+		default: {
+			fields: 'id,text,created,updated,author(login,name)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['comment'],
@@ -40,7 +42,7 @@ export const commentAddDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
 				default: 'id,text,created,updated,author(login,name)',

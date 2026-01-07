@@ -7,7 +7,10 @@ export const issueUpdateDescription: INodeProperties[] = [
 		name: 'updateFields',
 		type: 'collection',
 		placeholder: 'Add Field',
-		default: {},
+		default: {
+			summary: '',
+			description: '',
+		},
 		displayOptions: {
 			show: {
 				resource: ['issue'],
@@ -44,8 +47,25 @@ export const issueUpdateDescription: INodeProperties[] = [
 					},
 				},
 			},
+		],
+	},
+	{
+		displayName: 'Additional Options',
+		name: 'additionalOptions',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {
+			fields: 'id,idReadable,summary,description',
+		},
+		displayOptions: {
+			show: {
+				resource: ['issue'],
+				operation: ['update'],
+			},
+		},
+		options: [
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
 				default: 'id,idReadable,summary,description',

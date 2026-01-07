@@ -46,7 +46,9 @@ export const commandExecuteDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'issues(id,idReadable),query,visibility(permittedGroups(id,name),permittedUsers(id,login))',
+		},
 		displayOptions: {
 			show: {
 				resource: ['command'],
@@ -83,7 +85,7 @@ export const commandExecuteDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
 				default: 'issues(id,idReadable),query,visibility(permittedGroups(id,name),permittedUsers(id,login))',

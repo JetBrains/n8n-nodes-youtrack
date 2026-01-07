@@ -47,7 +47,9 @@ export const issueCreateDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,idReadable,summary'
+		},
 		displayOptions: {
 			show: {
 				resource: ['issue'],
@@ -72,7 +74,7 @@ export const issueCreateDescription: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
 				default: 'id,idReadable,summary',

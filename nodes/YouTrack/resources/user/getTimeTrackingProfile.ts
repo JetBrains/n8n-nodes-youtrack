@@ -7,7 +7,9 @@ export const userGetTimeTrackingProfileDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,periodFormat(id)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['user'],

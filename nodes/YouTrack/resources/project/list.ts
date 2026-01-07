@@ -21,7 +21,9 @@ export const projectListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,shortName,description,archived',
+		},
 		displayOptions: {
 			show: {
 				resource: ['project'],

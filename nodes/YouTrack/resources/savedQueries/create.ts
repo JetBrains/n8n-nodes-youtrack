@@ -51,7 +51,9 @@ export const savedQueriesCreateDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,query,owner(login,name),visibleFor(name,id),issues(id,idReadable,summary)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['savedQueries'],
@@ -60,7 +62,7 @@ export const savedQueriesCreateDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
 				default: 'id,name,query,owner(login,name),visibleFor(name,id),issues(id,idReadable,summary)',

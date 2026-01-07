@@ -30,7 +30,9 @@ export const tagAddToIssueDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,owner(login,name)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['tag'],
@@ -39,7 +41,7 @@ export const tagAddToIssueDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Fields to Return',
+				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
 				default: 'id,name,owner(login,name)',

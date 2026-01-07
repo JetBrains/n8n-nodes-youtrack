@@ -7,7 +7,9 @@ export const userGroupGetDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,usersCount,users(id,login,fullName,email),teamForProject(name,shortName)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['userGroup'],

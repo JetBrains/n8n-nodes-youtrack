@@ -21,7 +21,9 @@ export const userListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,login,fullName,email,avatarUrl,online,banned',
+		},
 		displayOptions: {
 			show: {
 				resource: ['user'],

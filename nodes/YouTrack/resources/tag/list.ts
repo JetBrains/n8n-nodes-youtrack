@@ -21,7 +21,9 @@ export const tagListDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),untagOnResolve,issues(id,idReadable)'
+		},
 		displayOptions: {
 			show: {
 				resource: ['tag'],
@@ -33,7 +35,7 @@ export const tagListDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),untagOnResolve,issues(id,idReadable),$type',
+				default: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),untagOnResolve,issues(id,idReadable)',
 				description: 'Comma-separated list of fields to return',
 				routing: {
 					send: {

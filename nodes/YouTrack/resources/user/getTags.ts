@@ -7,7 +7,9 @@ export const userGetTagsDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),untagOnResolve',
+		},
 		displayOptions: {
 			show: {
 				resource: ['user'],

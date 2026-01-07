@@ -7,7 +7,9 @@ export const userGetGeneralProfileDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,dateFieldFormat(id,presentation,pattern,datePattern),timezone(id,presentation,offset),locale(id,name,community,language,locale)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['user'],

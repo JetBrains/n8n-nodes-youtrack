@@ -7,7 +7,9 @@ export const issueGetDescription: INodeProperties[] = [
 		name: 'additionalFields',
 		type: 'collection',
 		placeholder: 'Add Fields',
-		default: {},
+		default: {
+			fields: 'id,idReadable,summary,description,created,updated,resolved,reporter(login,name),customFields(name,value),tags(id,name)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['issue'],

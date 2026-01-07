@@ -7,7 +7,9 @@ export const projectGetIssuesDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,idReadable,summary,description,created,updated,resolved',
+		},
 		displayOptions: {
 			show: {
 				resource: ['project'],
@@ -28,6 +30,7 @@ export const projectGetIssuesDescription: INodeProperties[] = [
 					},
 				},
 			},
+			// TODO:- not working?
 			{
 				displayName: 'Custom Fields',
 				name: 'customFields',

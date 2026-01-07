@@ -7,7 +7,9 @@ export const userGetDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,login,fullName,email,avatarUrl,online,banned,guest,tags(id,name),savedQueries(id,name)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['user'],

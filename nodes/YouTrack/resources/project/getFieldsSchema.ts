@@ -7,7 +7,9 @@ export const projectGetFieldsSchemaDescription: INodeProperties[] = [
 		name: 'additionalFields',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,field(name,id),project(shortName),canBeEmpty,isPublic',
+		},
 		displayOptions: {
 			show: {
 				resource: ['project'],

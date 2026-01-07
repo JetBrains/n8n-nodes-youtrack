@@ -7,7 +7,9 @@ export const tagGetIssueTagsDescription: INodeProperties[] = [
 		name: 'additionalOptions',
 		type: 'collection',
 		placeholder: 'Add Option',
-		default: {},
+		default: {
+			fields: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id)',
+		},
 		displayOptions: {
 			show: {
 				resource: ['tag'],
@@ -19,7 +21,7 @@ export const tagGetIssueTagsDescription: INodeProperties[] = [
 				displayName: 'Fields',
 				name: 'fields',
 				type: 'string',
-				default: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id),$type',
+				default: 'id,name,owner(login,name),visibleFor(name,id),updateableBy(name,id)',
 				description: 'Comma-separated list of fields to return',
 				routing: {
 					send: {
@@ -31,7 +33,7 @@ export const tagGetIssueTagsDescription: INodeProperties[] = [
 		],
 	},
 
-	// Note: Alternative way to get issue tags
+	// Note: Alternative way to get issue tags TODO:- not working
 	{
 		displayName: 'Note',
 		name: 'note',
