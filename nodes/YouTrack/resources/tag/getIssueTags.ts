@@ -33,18 +33,5 @@ export const tagGetIssueTagsDescription: INodeProperties[] = [
 		],
 	},
 
-	// Note: Alternative way to get issue tags TODO:- not working
-	{
-		displayName: 'Note',
-		name: 'note',
-		type: 'notice',
-		displayOptions: {
-			show: {
-				resource: ['tag'],
-				operation: ['getIssueTags'],
-			},
-		},
-		default: 'Private tags (like "Star") may not appear in this list due to API limitations. To see all tags including private ones, use Issue > Get operation and include "tags(id,name)" in the fields parameter.',
-	},
 ];
 
