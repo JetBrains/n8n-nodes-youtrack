@@ -7,7 +7,7 @@ import type {
 
 export class PermanentTokenCredentialForYouTrackApi implements ICredentialType {
     name = 'permanentTokenCredentialForYouTrackApi';
-    displayName = 'Permanent Token Credential for YouTrack API';
+    displayName = 'YouTrack API';
     // eslint-disable-next-line n8n-nodes-base/cred-class-field-documentation-url-miscased
     documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html';
     properties: INodeProperties[] = [
