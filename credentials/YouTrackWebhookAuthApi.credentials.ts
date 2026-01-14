@@ -5,7 +5,7 @@ import type {
 
 export class YouTrackWebhookAuthApi implements ICredentialType {
 	name = 'youTrackWebhookAuthApi';
-	displayName = 'YouTrack Webhook Auth API';
+	displayName = 'YouTrack Webhook Trigger App API';
 	// eslint-disable-next-line n8n-nodes-base/cred-class-field-documentation-url-miscased
 	documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html';
 	properties: INodeProperties[] = [

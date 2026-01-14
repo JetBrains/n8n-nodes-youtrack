@@ -9,22 +9,20 @@ YouTrack is a project management and issue tracking tool by JetBrains that helps
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
 [Installation](#installation)  
-[Actions](#actions)  
+[Operations](#operations)  
 [Credentials](#credentials)  
 [Compatibility](#compatibility)  
-[Usage](#usage)  
-[Resources](#resources)  
+[Resources](#resources)
 
 ## Installation
 
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
-## Actions
-Actions allow users to integrate the [YouTrack REST API](https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html) in their n8n workflows.
+## Operations
 
-<img src="images/action.png" alt="drawing" width="500"/>
+This node provides two components: the YouTrack node for API operations and the YouTrack Trigger node for webhook-based automation.
 
-
+### YouTrack Node
 
 The YouTrack node supports the following resources and operations:
 
@@ -83,16 +81,13 @@ The YouTrack node supports the following resources and operations:
 ### Work Item
 - **Add** - Add a work item (time tracking) to an issue
 
-## YouTrack Trigger (Webhook)
+### YouTrack Trigger Node
 
-The YouTrack Trigger node allows you to start workflows automatically when events occur in YouTrack (e.g., issue created, updated, deleted).
+The YouTrack Trigger node allows you to start workflows automatically when events occur in YouTrack.
 
-<img src="images/trigger.png" alt="drawing" width="400"/>
-
-### Supported Events
-
+**Supported Events:**
 - Issue Created
-- Issue Updated  
+- Issue Updated
 - Issue Deleted
 - Comment Added
 - Comment Updated
@@ -103,47 +98,46 @@ The YouTrack Trigger node allows you to start workflows automatically when event
 - Issue Attachment Added
 - Issue Attachment Deleted
 
----
-
 ## Credentials
 
-To use the YouTrack node, you need to authenticate with your YouTrack instance using a permanent token.
+This node uses permanent token authentication to connect to YouTrack.
 
 ### Prerequisites
 
-1. Access to a YouTrack instance (cloud or server)
+1. Access to a YouTrack instance (cloud or self-hosted)
 2. A YouTrack account with appropriate permissions
 
-### Setting Up Authentication
+### Authentication Setup
 
-1. **Generate a Permanent Token in YouTrack**
-2. **Configure Credentials in n8n**:
-   - In n8n, go to **Credentials** > **Create Credential**
+1. **Generate a Permanent Token:**
+   - Log in to your YouTrack instance
+   - Navigate to your Hub profile under **Authentication > Tokens**
+   - Create a new permanent token
+
+2. **Configure Credentials in n8n:**
+   - In n8n, go to **Credentials** > **New Credential**
    - Select **YouTrack API**
-   - Enter your **YouTrack URL** (e.g., `https://your-instance.myjetbrains.com/youtrack` or `http://localhost:8088` for self-hosted)
-     - Note: Enter the base URL without `/api` at the end
+   - Enter your **YouTrack URL** (e.g., `https://your-instance.myjetbrains.com/youtrack` for cloud
+      - **Important:** Enter the base URL without `/api` at the end
    - Enter your **Permanent Token**
    - Click **Save**
 
-The node uses Bearer token authentication and will automatically include the token in all API requests.
-
 ## Compatibility
 
-- **n8n Nodes API Version**: 1
-- **YouTrack API**: Compatible with YouTrack REST API
-
-**Note**: This node requires n8n version that supports community nodes with API version 1. If you encounter compatibility issues, please ensure you're using a recent version of n8n.
+- **Minimum n8n version:** Requires n8n version that supports community nodes with API version 1
+- **YouTrack API:** Compatible with YouTrack REST API (cloud and self-hosted instances)
 
 ## Usage
 
 ### Command Execute
 
-The **Command Execute** operation allows you to apply YouTrack commands to issues using natural language syntax. Examples:
-- `tag MyTag for me` - Adds "MyTag" to issue and assigns it to you
-- `tag To Deploy for jane.doe` - Adds "To Deploy" tag and assigns to jane.doe
-- `work 2h Fixed bug` - Logs 2 hours of work with a comment
+The **Command Execute** operation allows you to apply YouTrack commands to issues using natural language syntax:
 
-Note: `vote+1` cannot be used on your own issues, and usernames must be valid YouTrack logins.
+- `tag MyTag for me` - Adds the tag "MyTag" to an issue and assigns it to you
+- `tag To Deploy for jane.doe` - Adds the "To Deploy" tag to an issue and assigns to jane.doe
+- `work 2h Fixed bug` - Logs 2 hours of work on the issue with a comment
+
+**Note:** The `vote+1` command cannot be used on your own issues, and usernames must be valid YouTrack logins.
 
 ### Custom Fields
 
@@ -155,7 +149,7 @@ When listing or filtering issues, YouTrack uses its own query language. See the 
 
 ### Webhooks
 
-For webhook triggers, you need to configure webhook subscriptions in your YouTrack instance. The YouTrack Trigger node will provide you with the webhook URL to use during setup.
+For webhook triggers, configure the Webhook Triggers app in your YouTrack instance. The YouTrack Trigger node will provide the webhook URL during setup.
 
 ## Resources
 
