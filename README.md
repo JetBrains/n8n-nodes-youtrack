@@ -156,3 +156,6 @@ For webhook triggers, configure the Webhook Triggers app in your YouTrack instan
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
 * [YouTrack REST API documentation](https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html)
 * [YouTrack documentation](https://www.jetbrains.com/help/youtrack/)
+
+## License
+[MIT License](http://www.opensource.org/licenses/MIT)

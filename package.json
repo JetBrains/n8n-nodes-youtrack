@@ -2,12 +2,15 @@
 	"name": "@jetbrains/n8n-nodes-youtrack",
 	"version": "0.1.6",
 	"description": "Custom n8n node for YouTrack",
-	"license": "Apache-2.0",
+	"license": "MIT",
 	"homepage": "https://github.com/JetBrains/n8n-nodes-youtrack",
 	"keywords": [
 		"n8n-community-node-package"
 	],
-	"author": "JetBrains",
+	"author": {
+		"name": "JetBrains",
+		"email": "youtrack-n8n-publishers@jetbrains.com"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/JetBrains/n8n-nodes-youtrack.git"
