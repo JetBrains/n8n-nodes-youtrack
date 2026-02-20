@@ -32,7 +32,7 @@ export class YouTrackWebhookAuthApi implements ICredentialType {
 					authMethod: ['headerAuth'],
 				},
 			},
-			default: 'X-YouTrack-Signature',
+			default: 'X-YouTrack-Token',
 			description: 'The name of the header that contains the authentication token',
 			required: true,
 		},
